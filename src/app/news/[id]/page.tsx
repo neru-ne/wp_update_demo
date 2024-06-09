@@ -1,8 +1,9 @@
 import parse from 'html-react-parser';
 
+import { CategoryTag } from '@/components/atoms/CategoryTag'
+
 //hooks
 import { setApi } from '@/hooks/api';
-import { SetCategoryDom } from '@/hooks/posts/utils'
 
 //types
 import { allPostsType, postsType } from '@/types/api';
@@ -42,7 +43,7 @@ export default async function Post(
                   post.categories.map((category, index) => {
                     return (
                       <li key={`categories-${index}`} >
-                        { SetCategoryDom(categories,category)}
+                        <CategoryTag categories={categories} categoryId={category} />
                       </li>
                     )
                   })
