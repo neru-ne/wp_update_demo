@@ -39,3 +39,4 @@ jobs:
            port: ${{ secrets.FTP_PORT }} # デプロイ先のポート番号 21 or 22
            LOCAL_DIR: out/ #デプロイする対象のフォルダ
            REMOTE_DIR: ${{ secrets.REMOTE_DIR }} # デプロイ先のディレクトリ
+           ARGS: --delete --parallel=20 -x assets/images
