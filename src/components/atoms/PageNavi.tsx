@@ -41,7 +41,6 @@ export const PageNavi = (props: {
   } else {
     lastFlg = true
   };
-  console.log(offset)
   return (
     <>
       <div className='flex justify-center'>

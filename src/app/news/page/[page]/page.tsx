@@ -2,10 +2,10 @@ import parse from 'html-react-parser';
 
 //components
 import { PageNavi } from '@/components/atoms/PageNavi'
+import { CategoryTag } from '@/components/atoms/CategoryTag'
 
 //hooks
 import { setApi } from '@/hooks/api';
-import { SetCategoryDom } from '@/hooks/posts/utils';
 import { range } from '@/hooks/utils';
 
 
@@ -57,7 +57,7 @@ export default async function NewsPage({ params }: { params: { page: number } })
                         item.category.map((category, index2) => {
                           return (
                             <li key={`categories-${index2}`} className='' >
-                              {SetCategoryDom(categories, category)}
+                              <CategoryTag categories={categories} categoryId={category} />
                             </li>
                           )
                         })
