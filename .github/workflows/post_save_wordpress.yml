@@ -24,6 +24,11 @@ jobs:
          run: |
            npm install
            npm run build
+         env:
+          NEXT_PUBLIC_WPDOMAIN: ${{secrets.NEXT_PUBLIC_WPDOMAIN}}
+          NEXT_PUBLIC_BASIC_ID: ${{secrets.NEXT_PUBLIC_BASIC_ID}}
+          NEXT_PUBLIC_BASIC_PASSWORD: ${{secrets.NEXT_PUBLIC_BASIC_PASSWORD}}
+          NEXT_PUBLIC_PER_PAGE: ${{secrets.NEXT_PUBLIC_PER_PAGE}}
 
        - name: FTP-Deploy-Action
          uses: SamKirkland/FTP-Deploy-Action@2.0.0
