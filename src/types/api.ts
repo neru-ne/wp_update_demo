@@ -4,7 +4,12 @@ export type postsType = {
   content: { rendered: string, protected: boolean },
   categories: string[]
 };
-
+export type allPostsType = {
+  id: string;
+  title: string ;
+  content:string,
+  category: string[]
+};
 export type categoryType = {
   id: string;
   link: string;

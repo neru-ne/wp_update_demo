@@ -2,18 +2,18 @@ import parse from 'html-react-parser';
 
 //hooks
 import { setApi } from '@/hooks/api';
-import { setCategoryDom } from '@/hooks/posts/utils'
+import { SetCategoryDom } from '@/hooks/posts/utils'
 
 //types
-import { postsType } from '@/types/api';
+import { allPostsType, postsType } from '@/types/api';
 
 
 export async function generateStaticParams() {
   const api = new setApi();
 
-  const getPostList: postsType[] = await api.getPosts("/wp-json/wp/v2/posts?per_page=100&page=1");
+  const getAllPostList: allPostsType[] = await api.getAllPosts();
 
-  return getPostList.map((post) => ({
+  return getAllPostList.map((post) => ({
     id: post.id.toString(),
   }))
 }
@@ -42,7 +42,7 @@ export default async function Post(
                   post.categories.map((category, index) => {
                     return (
                       <li key={`categories-${index}`} >
-                        {setCategoryDom(categories,category)}
+                        { SetCategoryDom(categories,category)}
                       </li>
                     )
                   })

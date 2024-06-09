@@ -1,6 +1,8 @@
 import { categoryType } from '@/types/api';
+import { twMerge } from 'tailwind-merge';
 
-export const setCategoryDom = (categories: categoryType[],categoryId: string) => {
+
+export const SetCategoryDom = (categories: categoryType[],categoryId: string) => {
   let thisCategory = null;
   for (let i = 0; i < categories.length; i++) {
     if (categories[i].id === categoryId) {
@@ -16,8 +18,8 @@ export const setCategoryDom = (categories: categoryType[],categoryId: string) =>
   }
 
   return (
-    <span className={`bg-[#0177a9] text-[#fff] rounded p-1 text-[14px] ${thisCategory.slug}`}>
-      <a href={`/news/category/${thisCategory.slug}`}>{thisCategory.name}</a>
+    <span className={`${thisCategory.slug} bg-[#005376] text-[#fff] rounded p-2 text-[14px] block`}>
+      {thisCategory.name}
     </span>
   )
 }
