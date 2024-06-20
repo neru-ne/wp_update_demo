@@ -31,7 +31,7 @@ jobs:
           NEXT_PUBLIC_PER_PAGE: ${{secrets.NEXT_PUBLIC_PER_PAGE}}
 
        - name: FTP-Deploy-Action
-         uses: SamKirkland/FTP-Deploy-Action@4.3.5
+         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
          env:
            FTP_SERVER: ${{ secrets.FTP_SERVER }} # デプロイ先のサーバーURL
            FTP_USERNAME: ${{ secrets.FTP_USERNAME }} # デプロイ先のユーザー名
