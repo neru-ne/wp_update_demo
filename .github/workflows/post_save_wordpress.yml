@@ -32,7 +32,7 @@ jobs:
 
        - name: FTP-Deploy-Action
          uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-         env:
+         with:
            server: ${{ secrets.FTP_SERVER }} # デプロイ先のサーバーURL
            username: ${{ secrets.FTP_USERNAME }} # デプロイ先のユーザー名
            password: ${{ secrets.FTP_PASSWORD }} # デプロイ先のパスワード
