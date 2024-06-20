@@ -33,10 +33,10 @@ jobs:
        - name: FTP-Deploy-Action
          uses: SamKirkland/FTP-Deploy-Action@v4.3.5
          env:
-           FTP_SERVER: ${{ secrets.FTP_SERVER }} # デプロイ先のサーバーURL
-           FTP_USERNAME: ${{ secrets.FTP_USERNAME }} # デプロイ先のユーザー名
-           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }} # デプロイ先のパスワード
+           server: ${{ secrets.FTP_SERVER }} # デプロイ先のサーバーURL
+           username: ${{ secrets.FTP_USERNAME }} # デプロイ先のユーザー名
+           password: ${{ secrets.FTP_PASSWORD }} # デプロイ先のパスワード
            port: ${{ secrets.FTP_PORT }} # デプロイ先のポート番号 21 or 22
-           LOCAL_DIR: out/ #デプロイする対象のフォルダ
-           REMOTE_DIR: ${{ secrets.REMOTE_DIR }} # デプロイ先のディレクトリ
-           ARGS: --delete --parallel=20 -x assets/images
+           local-dir: out/ #デプロイする対象のフォルダ
+           server-dir: ${{ secrets.REMOTE_DIR }} # デプロイ先のディレクトリ
+           args: --delete --parallel=20 -x assets/images
